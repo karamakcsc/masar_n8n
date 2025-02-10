@@ -20,7 +20,7 @@ def get_gl(party):
 
 
 @frappe.whitelist()
-def get_sales_invoice(party):
+def get_sales_invoice():
     return frappe.db.sql("""
-    SELECT * FROM `tabSales Invoice` WHERE customer = %(party)s
-    """,{"party": party}, as_dict=True)
+    SELECT * FROM `tabSales Invoice`
+    """, as_dict=True)
