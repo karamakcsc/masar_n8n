@@ -23,4 +23,4 @@ def get_gl(party):
 def get_sales_invoice(party):
     return frappe.db.sql("""
     SELECT * FROM `tabSales Invoice` WHERE customer =  %s
-    """,(party,), as_dict=True)
+    """,{"customer": party}, as_dict=True)
