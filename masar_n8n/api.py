@@ -10,3 +10,4 @@ def get_gl(party):
         FROM `tabGL Entry` tge
         WHERE tge.is_cancelled = 0 AND tge.party = %(party)s
     """, {"party": party}, as_dict=True)
+##
