@@ -1,6 +1,6 @@
 import frappe
-import json
-from datetime import dates
+# import json
+# from datetime import dates
 
 
 @frappe.whitelist()
@@ -10,4 +10,4 @@ def get_gl(party):
         FROM `tabGL Entry` tge
         WHERE tge.is_cancelled = 0 AND tge.party = %(party)s
     """, {"party": party}, as_dict=True)
-##
+
