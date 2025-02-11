@@ -22,6 +22,7 @@ def get_gl(party):
 @frappe.whitelist()
 def get_sales_invoice():
     return frappe.db.sql("""
-    SELECT * FROM `tabSales Invoice`
-                         Limit 5
+    SELECT * FROM `tabSales Invoice` tsi
+    WHERE tsi.docstatus = 1
+    Limit 5
     """, as_dict=True)
