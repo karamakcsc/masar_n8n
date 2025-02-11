@@ -23,4 +23,5 @@ def get_gl(party):
 def get_sales_invoice():
     return frappe.db.sql("""
     SELECT * FROM `tabSales Invoice`
+                         Limit 5
     """, as_dict=True)
